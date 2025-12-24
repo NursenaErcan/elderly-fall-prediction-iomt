@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fall Prediction Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1 class="title">Fall Prediction Dashboard</h1>
+   
+
+  <!-- HEALTH STATUS CARD -->
+<div class="card health-card">
+    <h2 class="section-title">API Health Status</h2>
+    <div id="health-indicator" class="health-indicator">
+        Checking API status...
+    </div>
+</div>
+
+
+    <!-- MODEL SELECT -->
+    <div class="card">
+        <h2 class="section-title">Select ML Model</h2>
+        <select id="model-select"></select>
+    </div>
+
+    <!-- DATASET PREVIEW -->
+    <div class="card">
+        <h2 class="section-title">Preview Dataset Row</h2>
+        <button onclick="loadCSV()">Load CSV Preview</button>
+
+        <div class="csv-preview">
+            <pre id="csv-row"></pre>
+
+            <div class="csv-navigation">
+                <button onclick="prevRow()">← Previous</button>
+                <button onclick="nextRow()">Next →</button>
+                <button onclick="useRow()">Use This Row</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SINGLE PREDICTION -->
+    <div class="card">
+        <h2 class="section-title">Make a Prediction</h2>
+
+        <label>Distance (cm)</label>
+        <input id="distance" type="number">
+
+        <label>Pressure</label>
+        <input id="pressure" type="number">
+
+        <label>HRV</label>
+        <input id="hrv" type="number">
+
+        <label>Sugar Level</label>
+        <input id="sugar" type="number">
+
+        <label>SpO₂ (%)</label>
+        <input id="spo2" type="number">
+
+        <label>Accelerometer</label>
+        <input id="accel" type="number">
+
+        <button onclick="predict()">Predict</button>
+    </div>
+
+    <div id="result" class="result hidden"></div>
+
+ 
+<!-- BATCH PREDICTION -->
+<div class="card">
+    <h2 class="section-title">Batch Prediction</h2>
+
+    <div class="batch-controls">
+        <button onclick="loadBatchTemplate()">Load Batch Template</button>
+        <button onclick="loadBatchFromCSV()">Load Batch From CSV</button>
+        <button onclick="clearBatch()">Clear</button>
+    </div>
+
+    <textarea id="batchInput" class="batch-text" placeholder="Paste or load JSON batch data here"></textarea>
+
+    <button onclick="predictBatch()">Run Batch Prediction</button>
+</div>
+
+<div id="batch-result" class="result hidden"></div>
+
+<!-- MODEL METRICS -->
+<div class="card">
+    <h2 class="section-title">Model Performance Metrics</h2>
+
+    <div class="metric-block">
+        <button onclick="getAccuracy()">Get Accuracy</button>
+        <div id="accuracy-output" class="metric-output"></div>
+    </div>
+
+    <div class="metric-block">
+        <button onclick="getConfusion()">Get Confusion Matrix</button>
+        <div id="confusion-output" class="metric-output"></div>
+    </div>
+
+    <div class="metric-block">
+        <button onclick="getClassReport()">Get Classification Report</button>
+        <div id="classreport-output" class="metric-output"></div>
+    </div>
+
+    <div class="metric-block">
+        <button onclick="compareModels()">Compare Models</button>
+        <div id="compare-output" class="metric-output"></div>
+    </div>
+
+    <!-- RESTORED: RETRAIN BUTTON -->
+    <div class="metric-block">
+        <button onclick="retrainModel()">Retrain Model</button>
+        <div id="retrain-output" class="metric-output"></div>
+    </div>
+
+    <!-- ROC CURVE BUTTON -->
+    <div class="metric-block">
+        <button onclick="getROC()">Show ROC Curve</button>
+        <div id="roc-output" class="metric-output"></div>
+    </div>
+
+    <!-- PRECISION–RECALL CURVE BUTTON -->
+    <div class="metric-block">
+        <button onclick="getPR()">Show Precision–Recall Curve</button>
+        <div id="pr-output" class="metric-output"></div>
+    </div>
+
+</div>
+
+
+
+
+<script src="script.js"></script>
+</body>
+</html>

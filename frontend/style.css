@@ -1,0 +1,182 @@
+/* Sage Green Theme */
+:root {
+    --sage-light: #E8EFE6;
+    --sage: #C4D3C0;
+    --sage-dark: #90A892;
+    --text: #2E3B2E;
+}
+
+body {
+    background: var(--sage-light);
+    color: var(--text);
+    font-family: "Inter", sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 850px;
+    margin: auto;
+}
+
+.title {
+    font-size: 32px;
+    text-align: center;
+    color: var(--sage-dark);
+}
+
+.subtitle {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid var(--sage);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+}
+
+input, select, textarea, button {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    border: 1px solid var(--sage-dark);
+    background: white;
+}
+
+button {
+    background: var(--sage-dark);
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: var(--sage);
+}
+
+.csv-preview {
+    background: var(--sage-light);
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.csv-navigation {
+    display: flex;
+    justify-content: space-between;
+}
+
+.result {
+    padding: 18px;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* HEALTH CARD */
+.health-card {
+    border-left: 6px solid var(--sage-dark);
+}
+
+.health-indicator {
+    padding: 12px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 8px;
+    background: #f2f2f2;
+    margin-top: 10px;
+}
+
+/* Green = Online */
+.health-online {
+    background: #C9E7C3 !important;
+    color: #1f3a1f;
+}
+
+/* Red = Offline */
+.health-offline {
+    background: #E5A1A1 !important;
+    color: #5a1a1a;
+}
+
+.batch-text {
+    width: 100%;
+    min-height: 200px;
+    max-height: 500px;
+    resize: vertical;
+    padding: 12px;
+    border-radius: 8px;
+    background: white;
+    border: 1px solid var(--sage-dark);
+    font-family: "Consolas", "Courier New", monospace;
+    font-size: 14px;
+    overflow-y: auto;
+}
+
+.batch-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.batch-controls button {
+    width: 32%;
+}
+
+#batch-result {
+    white-space: pre-wrap;
+    overflow-x: auto;
+    max-height: 400px;
+}
+.metrics-table table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.metrics-table th,
+.metrics-table td {
+    border: 1px solid var(--sage-dark);
+    padding: 8px;
+    text-align: center;
+}
+
+.metrics-table th {
+    background: var(--sage);
+    font-weight: 600;
+}
+.metric-block {
+    margin-bottom: 25px;
+}
+
+.metric-output {
+    margin-top: 10px;
+    padding: 10px;
+    background: white;
+    border-radius: 8px;
+    border: 1px solid var(--sage-dark);
+}
+
+.metric-output table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.metric-output th, .metric-output td {
+    border: 1px solid var(--sage-dark);
+    padding: 6px;
+    text-align: center;
+}
+
+.metric-output th {
+    background: var(--sage);
+    font-weight: bold;
+}
